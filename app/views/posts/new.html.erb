@@ -1,0 +1,24 @@
+<h1>New Post for <%= @place.name %></h1>
+
+<form action="/posts" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  <input type="hidden" name="place_id" value="<%= @place.id %>">
+
+  <p>
+    <label>Title</label><br>
+    <input type="text" name="title" placeholder="e.g. Best Tacos Ever">
+  </p>
+
+  <p>
+    <label>Date Visited</label><br>
+    <input type="date" name="posted_on">
+  </p>
+
+  <p>
+    <label>Journal Entry</label><br>
+    <textarea name="description" rows="5" cols="40"></textarea>
+  </p>
+
+  <button>Save Journal Entry</button>
+</form>
